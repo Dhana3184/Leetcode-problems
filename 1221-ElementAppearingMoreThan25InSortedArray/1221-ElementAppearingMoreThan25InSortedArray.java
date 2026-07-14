@@ -1,0 +1,14 @@
+// Last updated: 14/07/2026, 14:16:14
+class Solution {
+    public int findSpecialInteger(int[] arr) {
+        int n=arr.length;
+        HashMap<Integer,Integer> map=new HashMap<>();
+        for(int i=0;i<arr.length;i++){
+            map.put(arr[i],map.getOrDefault(arr[i],0)+1);
+            if(map.get(arr[i])> n/4){
+                return arr[i];
+            }
+        }
+        return -1;
+    }
+}
